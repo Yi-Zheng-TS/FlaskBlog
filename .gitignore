@@ -1,0 +1,7 @@
+venv/ # filter virtual environment directory
+
+.idea/
+
+.git/
+
+__pycache__/ # pycharm directory
