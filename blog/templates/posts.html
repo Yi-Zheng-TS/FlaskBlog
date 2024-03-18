@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}All Posts{% endblock title %}
+{% block content %}
+    {% for post in posts %}
+        <p class="box-home-font"><strong>Title:&nbsp;</strong><a href="{{ url_for('post', post_id=post.id) }}">"{{ post.title }}"</a></p>
+        <p class="box-home-font"><strong>Author:&nbsp;</strong>{{ post.user.username }}</p>
+        <p class="box-home-font"><strong>Content: </strong>Please click the title</P>
+        <hr />
+    {% endfor %}
+{% endblock content %}

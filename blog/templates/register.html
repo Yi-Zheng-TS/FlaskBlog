@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %} Register {% endblock %}
+{% for error in form.username.errors %} <span style="color: red">[{{ error }}]</span> {% endfor %}
+{% block content %}
+<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div style="width:100%; text-align:center", class="color1">
+    <p class="remind1">Please fill in and confirm personal information carefully, thank you!</p>
+    <br>
+    <form method="POST" action="" class="style1">
+        {{ form.csrf_token() }}
+        <p>{{ form.username.label }} {{ form.username }}</p>
+        <p>(e.g. firstname lastname)</p>
+        <br>
+        <p>{{ form.email.label }} {{ form.email }}</p>
+        <br>
+        <p>{{ form.password.label }} {{ form.password }}</p>
+        <p>(A six-digit combination of letters and numbers)</p>
+        <br>
+        <p>{{ form.confirm_password.label }} {{ form.confirm_password }}</p>
+        <br>
+        <p><input type="submit" value="Register" class="sub1"></p>
+    </form>
+</div>
+{% endblock content %}

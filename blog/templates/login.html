@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Logging in{% endblock %}
+{% block content %}
+<div style="width:100%; text-align:center" class="color2">
+    <p class="remind2">Welcome to my blog website.</p>
+    <br>
+    <form method="POST" action="" class="style2">
+      <p>{{ form.csrf_token }}</p>
+      <p>{{ form.email.label }} {{ form.email }}</p>
+        <br>
+      <p>{{ form.password.label }} {{ form.password }}</p>
+        <br>
+      <input type="submit" value="Login" class="sub2">
+    </form>
+</div>
+{% endblock content %}

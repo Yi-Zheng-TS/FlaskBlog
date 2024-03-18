@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+    {% for post in posts %}
+        {% if post.user.username == 'Yi Zheng' %}
+            <div style="float:left">
+                <img class="box-post-image" src="{{ url_for('static', filename='img/' + post.image_file) }}" />
+            </div>
+            <div style="padding:20px">
+                <p class="box-home-font"><strong>Title:&nbsp;</strong><a href="{{ url_for('post', post_id=post.id) }}">"{{ post.title }}"</a></p>
+                <p class="box-home-font"><strong>Author:&nbsp;</strong>{{ post.user.username }}</p>
+                <p class="box-home-font"><strong>Content: </strong>Please click the title</P>
+            </div>
+            <hr />
+        {% endif %}
+    {% endfor %}
+{% endblock content %}

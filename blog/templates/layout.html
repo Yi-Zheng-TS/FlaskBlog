@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} - Welcome to my magic world</title>
+    <embed src="../static/img/castle in the sky.mp3" hidden="true" autostart="true" loop="true">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <!-- head part start -->
+    <div class="header w">
+        <!-- logo part -->
+        <div class="logo"> <strong>Yi's Blog</strong> </div>
+        <!-- navigation bar -->
+        <div class="nav">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('posts') }}">All Posts</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
+        <!-- hint part -->
+        <div class="hint-routes-flash">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <p>{{ message }}</p>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    <!-- head part end -->
+    <!-- banner part start -->
+    <div class="banner">
+        <!-- type area -->
+        <div class="w">
+            <div class='sentence1'>
+                <br> Castle in the sky
+            </div>
+            <br><br><br><br><br>
+            <p class='sentence2'>
+                When you walk in a rainy night, <br>you will be the sunshine of tomorrow morning, looking forward to your appearance to bring us warmth.
+            </p>
+        </div>
+    </div>
+    <!-- banner part end -->
+    <!-- box part start -->
+    <div class="box">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <!-- box part end -->
+    <!-- footer part start -->
+    <div class="footer">
+        <div class="w">
+            <div class="copyright">
+                <p>- This website shall not be responsible for any personal information disclosure.</p>
+                <p>- This website does not guarantee the correctness of the content.</p>
+                <p>- All contents published in this website are for reference only and do not imply that this website agrees with any statement or description</p>
+                <p>- Copyright © 2021 Powered by Yi's Blog.</p>
+            </div>
+            <div class="links">
+                <dl>
+                    <dt><ins>Contact Details</ins></dt>
+                    <dd><a href="http://www.facebook.com">Facebook</a></dd>
+                    <dd>Email: ZhengY46@cardiff.ac.uk</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- footer part end -->
+</body>
+
+</html>

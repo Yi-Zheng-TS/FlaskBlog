@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Post{% endblock title %}
+{% block content %}
+<br />
+<img class="box-post-image" src="{{ url_for('static', filename='img/' + post.image_file) }}" />
+<p class="box-post-font"><strong>Title:</strong>&nbsp;{{ post.title }}</p>
+<p class="box-post-font"><strong>Author:</strong>&nbsp;{{ post.user.username }}</p>
+<p class="box-post-font"><strong>Email: </strong>&nbsp;{{ post.user.email }}</p>
+<p class="box-post-font"><strong>Content: </strong></P>
+<p class="box-post-font">{{ post.content }}</p>
+
+{% for comment in comments %}
+<br />
+<p style="color:blue">"{{ comment.content }}"<br><small>Author:&nbsp;{{ comment.user.username }}</small></p>
+{% endfor %}
+<br />
+<form method="POST" action="{{ url_for('post_comment', post_id=post.id) }}">
+    {{ form.hidden_tag() }}
+    <div class="box-post-bar">
+        {{ form.comment.label }} {{ form.comment }}
+        {% for error in form.comment.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div class="box-post-submit">{{ form.submit() }}</div>
+</form>
+{% endblock content %}
+
+
