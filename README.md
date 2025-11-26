@@ -41,6 +41,21 @@ flask-blog/
 ├── requirements.txt
 └── wsgi.py
 
+⚙️ How to Run the Project
+1. Clone the repository:
+git clone <your-repo-url>
+2. Create a virtual environment:
+python -m venv venv
+3. Activate the environment:
+Windows:
+venv\Scripts\activate
+4. Install dependencies:
+pip install -r requirements.txt
+5. Run the application:
+python wsgi.py
+6. Open in browser:
+http://127.0.0.1:5000/
+
 🧠 What I Learned
 Building REST-style routes with Flask
 Structuring a scalable Flask project
