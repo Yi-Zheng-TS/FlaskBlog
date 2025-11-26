@@ -1,15 +1,63 @@
-CMT120 - Web Application Development Coursework
+✅ Flask Blog Web Application
 
-This blog website is based on flask frame, and some of features are referenced to three flask-lab exercises of CMT120 course of School of Computer Science of Cardiff University.
+📌 Project Overview
+This is a full-stack blog web application built with Flask. The project focuses on building a complete blogging system with user authentication, post management, and a clean front-end interface. It was developed to strengthen my skills in Python web development, backend logic, database modeling, and front-end integration.
+Users can register, log in, create blog posts, and view content through a simple and user-friendly interface. The application follows a clear project structure and demonstrates real-world web development practices.
 
-There is a blog folder which is composed with a static folder and a templates folder and a total of four python files.
-And also include a wsgi.py file as a start running file. 
+🚀 Tech Stack
+Backend: Python, Flask
+Database: SQLite (via SQLAlchemy)
+Frontend: HTML, CSS
+Form Handling: Flask-WTF
+Authentication: Flask-Login
+Deployment Interface: WSGI
+Environment Management: Virtual Environment, requirements.txt
 
-flask-blog: blog folder & .gitignore folder & requirements.txt & wsgi.py
+🗂 Project Structure
+flask-blog/
+│
+├── blog/
+│   ├── static/
+│   │   ├── img/
+│   │   └── style.css
+│   │
+│   ├── templates/
+│   │   ├── layout.html
+│   │   ├── home.html
+│   │   ├── about.html
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── post.html
+│   │   ├── posts.html
+│   │   ├── success.html
+│   │   └── thank.html
+│   │
+│   ├── __init__.py
+│   ├── forms.py
+│   ├── models.py
+│   └── routes.py
+│
+├── .gitignore
+├── requirements.txt
+└── wsgi.py
 
-blog folder: static folder & templates folder & (__init__.py, forms.py, models.py, routes.py)
+🧠 What I Learned
+Building REST-style routes with Flask
+Structuring a scalable Flask project
+Handling user authentication and sessions
+Working with databases using SQLAlchemy
+Front-end and back-end integration
+Debugging and testing web applications
+Managing project dependencies with requirements.txt
 
-static folder: img folder & style.css file
+📈 Future Improvements
+Add image uploads for posts
+Implement user roles (admin/editor)
+Improve UI with a modern frontend framework
+Add unit tests for backend routes
+Deploy to a cloud platform (e.g. AWS or Render)
 
-templates folder: about.html, home.html, layout.html, login.html, login.html, post.html, posts.html, register.html, success.html, thank.html
-
+👤 Author
+Yi Zheng
+Junior Software Engineer
+Python | Flask | SQL | C++
